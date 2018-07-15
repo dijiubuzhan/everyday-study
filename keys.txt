@@ -1,0 +1,57 @@
+1.activity,view,windows三者的关系
+activity是工人，windows是显示屏，view是信息。activity控制windows创建，view显示在windows上。
+2. Ui卡顿原因与解决办法
+(1) 渲染原理
+为什么会感知到卡顿
+理解VSYNC
+(2) 卡顿的外部因素
+手机性能
+系统本身
+内存抖动
+在主线程执行耗时操作
+(3) 卡顿的内部因素
+布局层级
+measure、layout、draw耗时
+过度绘制
+(4) 监控卡顿
+使用Handler#setMessageLogging
+3.线程间通信方式，进程间通信方式
+4.数组排序
+（1）sort()  排序；对数组中的元素进行排列，默认是以字符串的规则进行从小到大排序
+（2）冒泡排序
+int[]　arr = {23,12,48,56,45};
+　　　　  int temp = -1;
+        for(int i=0;i<arr.length;i++) {
+            for(int j=i+1;j<arr.length;j++) {
+                if(arr[i]>arr[j]) {
+                    temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+        System.out.println(Arrays.toString(arr));
+（3）直接选择排序
+int[] arr = {23,12,48,56,45};
+　　　　for(int i=0;i<arr.length;i++) {
+            int tem = i;
+            for(int j=i;j<arr.length;j++) {
+                if(arr[j] < arr[tem]) {
+                    tem = j;
+                }
+            }
+            int temp1 = arr[i];
+            arr[i] = arr[tem];
+            arr[tem] = temp1;
+        }
+        System.out.println(Arrays.toString(arr));
+（4）反转排序
+int[] arr = {23,12,48,56,45};
+　　　　for(int i=0;i<arr.length / 2;i++) {
+            int temp = arr[i];
+            arr[i] = arr[arr.length-i-1];
+            arr[arr.length-i-1] = temp;
+        }
+        System.out.println(Arrays.toString(arr))
+5.java 去重并排序
+HashSet
